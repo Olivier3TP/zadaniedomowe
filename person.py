@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date
 
 
 class Address:
@@ -14,22 +14,27 @@ class Person:
         self.date = date
         self.pesel = pesel
         self.address = Address(street, zipCode, city)
+        self.validate_pesel()
 
     def validate_pesel(self):
         if self.pesel.isdigit() and len(self.pesel) == 11:
             # 1-3-7-9-1-3-7-9-1-3.
-            suma = ((self.pesel[0] * 1) + (self.pesel[1] * 3) + (self.pesel[2] * 7)
-                    + (self.pesel[3] * 9) + (self.pesel[4] * 1) + (self.pesel[5] * 3)
-                    + (self.pesel[6] * 7) + (self.pesel[7] * 9) + (self.pesel[8] * 1)
-                    + (self.pesel[9] * 3))
+            suma = ((int(self.pesel[0]) * 1) + (int(self.pesel[1]) * 3) + (int(self.pesel[2]) * 7)
+                    + (int(self.pesel[3]) * 9) + (int(self.pesel[4]) * 1) + (int(self.pesel[5]) * 3)
+                    + (int(self.pesel[6]) * 7) + (int(self.pesel[7]) * 9) + (int(self.pesel[8]) * 1)
+                    + (int(self.pesel[9]) * 3))
+
             validate = (10 - (suma % 10) % 10)
-            if validate == self.pesel[10]:
-                year = self.pesel[0:2]
-                month = self.pesel[2:4]
-                day = self.pesel[4:6]
+
+            if validate == int(self.pesel[10]):
+
+                year = int(self.pesel[0:2])
+                month = int(self.pesel[2:4])
+                day = int(self.pesel[4:6])
 
                 if 81 <= month <= 92:
                     year += 1800
+                    month -= 80
                 elif 1 <= month <= 12:
                     year += 1900
                 elif 21 <= month <= 32:
@@ -42,9 +47,9 @@ class Person:
                     year += 2200
                     month -= 60
 
-                birth_date = datetime(day, month, year)
+                birth_date = date(year, month, day)
 
                 if birth_date == self.date:
-                    pass
+                    return True
 
         raise ValueError("Invalid pesel")

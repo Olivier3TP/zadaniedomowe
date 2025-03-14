@@ -13,31 +13,31 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="gridLayoutWidget">
+  <widget class="QWidget" name="gridLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>-10</y>
-     <width>209</width>
-     <height>311</height>
+     <x>6</x>
+     <y>0</y>
+     <width>561</width>
+     <height>301</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="0">
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>Pesel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Imie:</string>
-      </property>
-     </widget>
-    </item>
+   <layout class="QGridLayout" name="gridLayout_2">
     <item row="2" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Nazwisko:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Adres (ulica/kodpocztowy/miasto)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
      <widget class="QLabel" name="label_4">
       <property name="text">
        <string>Data Urodzenia</string>
@@ -45,51 +45,42 @@
      </widget>
     </item>
     <item row="4" column="0">
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="label_3">
       <property name="text">
-       <string>Adres (ulica/kodpocztowy/miasto)</string>
+       <string>Pesel</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QLabel" name="label_5">
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string>Nazwisko:</string>
+       <string>Imie:</string>
       </property>
      </widget>
     </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="gridLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>0</y>
-     <width>351</width>
-     <height>301</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_2">
-    <item row="4" column="0">
-     <widget class="QLineEdit" name="streetEdit"/>
+    <item row="1" column="2" colspan="3">
+     <widget class="QLineEdit" name="nameEdit"/>
     </item>
-    <item row="4" column="1">
-     <widget class="QLineEdit" name="zipCodeEdit"/>
-    </item>
-    <item row="4" column="2">
-     <widget class="QLineEdit" name="cityEdit"/>
-    </item>
-    <item row="3" column="0" colspan="3">
-     <widget class="QLineEdit" name="peselEdit"/>
-    </item>
-    <item row="2" column="0" colspan="3">
-     <widget class="QLineEdit" name="birthDateEdit"/>
-    </item>
-    <item row="1" column="0" colspan="3">
+    <item row="2" column="2" colspan="3">
      <widget class="QLineEdit" name="lastNameEdit"/>
     </item>
-    <item row="0" column="0" colspan="3">
-     <widget class="QLineEdit" name="nameEdit"/>
+    <item row="5" column="3">
+     <widget class="QLineEdit" name="zipCodeEdit"/>
+    </item>
+    <item row="5" column="2">
+     <widget class="QLineEdit" name="streetEdit"/>
+    </item>
+    <item row="5" column="4">
+     <widget class="QLineEdit" name="cityEdit"/>
+    </item>
+    <item row="4" column="2" colspan="3">
+     <widget class="QLineEdit" name="peselEdit"/>
+    </item>
+    <item row="3" column="2" colspan="3">
+     <widget class="QDateEdit" name="birthDateEdit"/>
+    </item>
+    <item row="0" column="0" colspan="5">
+     <widget class="QComboBox" name="comboBox"/>
     </item>
    </layout>
   </widget>
